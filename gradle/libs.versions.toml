@@ -1,0 +1,32 @@
+[versions]
+spring-boot = "3.4.4"
+mockito = "5.16.1"
+testcontainers = "1.20.6"
+h2 = "2.3.232"
+postgresql = "42.7.5"
+
+[libraries]
+#Spring Boot
+spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "spring-boot" }
+spring-boot-starter-data-jpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa", version.ref = "spring-boot" }
+spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "spring-boot" }
+spring-boot-testcontainers = { group = "org.springframework.boot", name = "spring-boot-testcontainers", version.ref = "spring-boot" }
+
+#Runtime DB
+runtime-postgresql = { group = "org.postgresql", name = "postgresql", version.ref = "postgresql" }
+runtime-h2 = { group = "com.h2database", name = "h2", version.ref = "h2" }
+
+testcontainers-junit-jupiter = { group = "org.testcontainers", name = "junit-jupiter", version.ref = "testcontainers" }
+testcontainers-postgresql = { group = "org.testcontainers", name = "postgresql", version.ref = "testcontainers" }
+mockito = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+
+[bundles]
+spring = ["spring-boot-starter-web", "spring-boot-starter-data-jpa"]
+testing = [
+    "spring-boot-starter-test",
+    "spring-boot-testcontainers",
+    "mockito",
+    "testcontainers-junit-jupiter",
+    "testcontainers-postgresql"
+]
+runtime = ["runtime-postgresql", "runtime-h2"]

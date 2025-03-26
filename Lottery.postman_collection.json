@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "4003af69-3b7c-493b-a2ed-4c37f592d581",
+		"name": "Lottery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7238550"
+	},
+	"item": [
+		{
+			"name": "Get next upcoming lottery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/lottery",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create lottery",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ballots\": 120\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/lottery",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all lotteries",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/lottery/all",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get lottery",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/lottery/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get lottery details",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/lottery/1/detail",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"1",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ballots for lottery",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/lottery/1/ballots?hasHolder=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"1",
+						"ballots"
+					],
+					"query": [
+						{
+							"key": "hasHolder",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get holders",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/holder",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"holder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create holder",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jay Son\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/holder",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"holder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase lottery ballots",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"holderId\": 1,\r\n    \"ballots\": [\r\n        6,\r\n        7,\r\n        10\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/lottery/1/purchase",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"1",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add wine to lottery",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pinot Noir 2014\",\r\n    \"price\": \"230.9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/lottery/1/wines",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"1",
+						"wines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get wines for lottery",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/lottery/1/wines",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"1",
+						"wines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Raffle wine for lottery",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/lottery/1/raffle/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"1",
+						"raffle",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
